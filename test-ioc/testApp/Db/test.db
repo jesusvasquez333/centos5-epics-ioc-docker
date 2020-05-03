@@ -1,0 +1,18 @@
+record(longin, $(P):id) {
+    field(DESC, "Client ID")
+    field(VAL, 0)
+}
+
+record(ai, $(P):scratch) {
+    field(DESC, "Client ID")
+    field(VAL, 0)
+}
+
+record(calcout, $(P):upTimeCnt) {
+    field(DESC, "Uptime counter")
+    field(EGU, "s")
+    field(SCAN, "1 second")
+    field(A, 0)
+    field(CALC, "A+1")
+    field(OUT, "$(P):upTimeCnt.A")
+}
