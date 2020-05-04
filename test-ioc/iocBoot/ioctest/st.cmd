@@ -12,7 +12,7 @@ dbLoadDatabase "dbd/test.dbd"
 test_registerRecordDeviceDriver pdbbase
 
 ## Load record instances
-dbLoadRecords("db/test.db","P=${IOC_PREFIX}")
+dbLoadRecords("db/test.db","P=${IOC_PREFIX},ID=${IOC_ID}")
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit

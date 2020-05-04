@@ -5,6 +5,8 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 #=============================
 
+CXXFLAGS+=-fno-operator-names
+
 #=============================
 # Build the IOC application
 
@@ -16,13 +18,14 @@ DBD += test.dbd
 test_DBD += base.dbd
 
 # Include dbd files from all support applications:
-#test_DBD += xxx.dbd
+test_DBD += signalGenerator.dbd
 
 # Add all the support libraries needed by this IOC
 #test_LIBS += xxx
 
 # test_registerRecordDeviceDriver.cpp derives from test.dbd
 test_SRCS += test_registerRecordDeviceDriver.cpp
+test_SRCS += signalGenerator.cpp
 
 # Build the main IOC entry point on workstation OSs.
 test_SRCS_DEFAULT += testMain.cpp
